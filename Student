@@ -1,0 +1,50 @@
+package com.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity //Establish the mapping between annotated class and database table
+@Table(name="student_details")//we have to give the table name otherwise will take class name as table name 
+public class Student {
+   @Id  //Primary key for id column
+   @GeneratedValue(strategy = GenerationType.IDENTITY)//Auto_increment
+   @Column(name="s_id")//change the column name
+   private int id;
+   @Column(name="s_name")
+   private String name;
+   private String course;
+public Student() {
+	super();
+}
+public Student( String name, String course) {
+	super();
+
+	this.name = name;
+	this.course = course;
+}
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getCourse() {
+	return course;
+}
+public void setCourse(String course) {
+	this.course = course;
+}
+   
+   
+	
+}
